@@ -1,0 +1,20 @@
+[theme]
+font = "sans-serif"
+baseRadius = "medium"
+buttonRadius = "medium"
+paddingTop = "2rem"
+paddingBottom = "2rem"
+
+[theme.light]
+primaryColor = "#0F766E"
+backgroundColor = "#F4F7F8"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#172B3A"
+borderColor = "#D7E2E6"
+
+[theme.dark]
+primaryColor = "#0F766E"
+backgroundColor = "#0D1522"
+secondaryBackgroundColor = "#152235"
+textColor = "#E7EEF5"
+borderColor = "#2B3B50"

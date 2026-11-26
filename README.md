@@ -10,6 +10,17 @@ This project compares five supervised classification algorithms for the binary c
 
 **Important:** This is an educational machine-learning exercise. It is not a clinical diagnostic system and must not be used to make healthcare decisions.
 
+## Navigation
+
+| If you want to... | Open or run... |
+|---|---|
+| Get started quickly | `START_HERE.txt` |
+| Find a file or workflow | `docs/PROJECT_MAP.md` |
+| Launch the web app | `streamlit run app/streamlit_app.py` |
+| Retrain the models | `src/train.py` |
+| Read the assignment report | `reports/project_report.md` |
+| Deploy on Streamlit Community Cloud | `docs/DEPLOYMENT.md` |
+
 ## Algorithms
 1. Decision Tree Classifier
 2. K-Nearest Neighbours (KNN)
@@ -22,18 +33,17 @@ The assignment requests comparison of at least two or three algorithms. This imp
 ## Project structure
 ```text
 heart_disease_classification/
-├── app/streamlit_app.py
-├── data/raw/                  # downloaded dataset is saved here
-├── models/                    # trained model files are saved here
-├── outputs/                   # metrics, reports and plots are saved here
-├── reports/project_report.md
-├── src/
-│   ├── common.py
-│   ├── download_data.py
-│   ├── train.py
-│   └── explain.py
-├── requirements.txt
-└── README.md
+├── .streamlit/config.toml       # app theme
+├── app/                         # Streamlit interface and app dependencies
+├── data/raw/                    # UCI Cleveland dataset
+├── docs/                        # project map and deployment guide
+├── models/                      # saved model pipelines and metadata
+├── outputs/                     # generated metrics, plots and test split
+├── reports/                     # project report
+├── src/                         # data, training and explanation scripts
+├── README.md                    # project home page
+├── START_HERE.txt               # short beginner checklist
+└── requirements.txt             # training and analysis dependencies
 ```
 
 ## Setup in VS Code (Windows PowerShell)
@@ -53,26 +63,23 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 
 ## Run the project
-Run commands from the project root (the folder containing README.md):
+Run commands from this folder, the project root. The trained model is included, so you can start the app directly:
+
+```powershell
+streamlit run app/streamlit_app.py
+```
+
+To reproduce the full workflow and regenerate the model and outputs:
 
 ```powershell
 python src/download_data.py
 python src/train.py
 python src/explain.py
-streamlit run app/streamlit_app.py
 ```
 
 ## Deploy on Streamlit Community Cloud
 
-The app entrypoint is `app/streamlit_app.py`. The deployment dependencies are in `app/requirements.txt`; these versions match the saved model in `models/best_model.joblib`.
-
-1. Push this project to a GitHub repository. Keep `models/best_model.joblib` in the repository because the app loads it at startup.
-2. Sign in at [Streamlit Community Cloud](https://share.streamlit.io/) with GitHub and create an app.
-3. Choose your repository and branch, and set the app file path to `app/streamlit_app.py`.
-4. In **Advanced settings**, choose Python **3.14** to match the environment used to create the saved model.
-5. Choose whether the app should be public or private, then deploy.
-
-Community Cloud reads the app-specific `app/requirements.txt` for this entrypoint. The root `requirements.txt` remains available for the training and explainability scripts. See the [Community Cloud deployment guide](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy) for details.
+See [the deployment guide](docs/DEPLOYMENT.md) for the correct GitHub file path, Python version, and dependency file.
 
 The first command downloads UCI dataset ID 45 using the `ucimlrepo` package. An internet connection is required for this one-time download. The data is saved as `data/raw/heart_disease.csv`.
 
