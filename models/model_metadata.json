@@ -1,0 +1,21 @@
+{
+  "best_model": "KNN",
+  "features": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "positive_class": 1,
+  "target_definition": "num > 0 means disease present",
+  "random_state": 42
+}

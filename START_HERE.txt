@@ -1,0 +1,26 @@
+START HERE — HEART DISEASE CLASSIFICATION PROJECT
+
+1. Extract the ZIP file.
+2. Open the extracted heart_disease_classification folder in VS Code.
+3. Open Terminal > New Terminal.
+4. Run:
+   py -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   pip install -r requirements.txt
+5. Download dataset:
+   python src/download_data.py
+6. Train and compare all five algorithms:
+   python src/train.py
+7. Generate explainability outputs:
+   python src/explain.py
+8. Launch the application:
+   streamlit run app/streamlit_app.py
+
+IMPORTANT SUBMISSION CHECK:
+- Run the commands successfully on your computer.
+- Check outputs/model_comparison.csv and copy the real metrics into reports/project_report.md.
+- Add your actual screenshots to the report/LMS submission.
+- Ask your teacher whether roll number 5 must implement one specific algorithm or whether comparing all listed classification algorithms is acceptable.
+- Submit source code, dataset, results and screenshots as required by your assignment.
+
+The UCI dataset is downloaded by the first command and therefore requires an internet connection. No fabricated model scores are included.
